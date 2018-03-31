@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">HideMe</string>
+    <string name="app_name">HideMe2</string>
     <string name="greeting">Hello And</string>
     <string name="welcome">WELCOME</string>
-    <string name="action_settings">Settings</string>
 </resources>

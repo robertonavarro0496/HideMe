@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sempiternalsearch.hideme.MainActivity">
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/relative_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
+        android:background="@android:color/black">
 
         <ImageView
             android:id="@+id/imageView"
@@ -18,29 +18,23 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="73dp"
-            android:fontFamily="@font/roboto_thin"
-            android:text="@string/greeting"
-            android:textColor="@color/sleezOrange"
-            android:textSize="46sp" />
+            android:adjustViewBounds="false"
+            android:background="@drawable/icon"
+            android:contentDescription="@string/welcome"
+            android:cropToPadding="false"
+            android:scaleType="centerInside" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="81dp"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/welcome"
             android:textColor="@color/sleezOrange"
             android:textSize="28sp" />
     </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+
+</android.support.constraint.ConstraintLayout>
