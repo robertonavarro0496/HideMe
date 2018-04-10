@@ -2,10 +2,10 @@ package com.example.sempiternalsearch.hideme2;
 
 import android.graphics.drawable.Drawable;
 
-public class FolderModel {
+public class GalleryModel {
     String folderName;
     Drawable fImage;
-    public FolderModel(String folderName, Drawable fImage){
+    public GalleryModel(String folderName, Drawable fImage){
         this.folderName = folderName;
         this.fImage = fImage;
     }

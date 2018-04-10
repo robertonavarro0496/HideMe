@@ -5,26 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
-public class GalleryAdapter extends ArrayAdapter<FolderModel> {
+public class GalleryAdapter extends ArrayAdapter<GalleryModel> {
     String folderName;
     String folderImage;
     int resource;
     Context context;
-    ArrayList<FolderModel> folderList;
+    ArrayList<GalleryModel> folderList;
     LayoutInflater inflater = null;
-    public GalleryAdapter(Context context, int resource, ArrayList<FolderModel> objects){
+    public GalleryAdapter(Context context, int resource, ArrayList<GalleryModel> objects){
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
-        this.folderImage = folderImage;
-        this.folderName = folderName;
         folderList =objects;
         inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -35,11 +31,10 @@ public class GalleryAdapter extends ArrayAdapter<FolderModel> {
         convertView = inflater.inflate(R.layout.folders, parent, false);
         TextView textFolder = (TextView) convertView.findViewById(R.id.gallery_title);
         ImageView image =  (ImageView) convertView.findViewById(R.id.galleryImage);
-        if (folderList.get(position).getFileName() == null){
+        if (folderList.get(position).getFileName() == "New Folder") {
             image.setImageResource(R.drawable.add);
             textFolder.setText("New Folder");
         }
-
         return convertView;
     }
 }
