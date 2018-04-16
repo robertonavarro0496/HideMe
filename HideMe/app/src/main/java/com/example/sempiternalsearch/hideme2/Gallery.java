@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class Gallery extends AppCompatActivity {
     GridView gridView;
     Drawable img;
-    MediaLoader loader;
     AlertDialog.Builder alertDialog;
     String folderName;
     @Override

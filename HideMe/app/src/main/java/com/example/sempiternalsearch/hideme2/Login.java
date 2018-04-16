@@ -40,28 +40,34 @@ public class Login extends AppCompatActivity {
         buttonAppend(buttonString);
     }
     public void buttonLogin(View v){
-        Intent intent = new Intent(context, Gallery.class);
-        startActivity(intent);
+        if (editText.length() >= 4){
+            Intent intent = new Intent(context, Gallery.class);
+            startActivity(intent);
+        }
     }
     private void buttonAppend(String buttonString){
         String editString = editText.getText().toString();
-
-        if(buttonString.equals("DEL") && editString.length() > 0) {
-            String text = editText.getText().toString();
-            editText.setText(text.substring(0, text.length() - 1));
-        }
-        else if (!buttonString.equals("DEL")) {
+        String text = editText.getText().toString();
+        if (!buttonString.equals("DEL")) {
             int number = Integer.parseInt(buttonString);
             editString += buttonString;
             editText.append(buttonString);
             //Log.d("DEBUG",editText.getText().toString());
         }
-        else{}
+
         if (editString.length() >= 4) {
             login.setBackgroundResource(R.drawable.login_yes);
         }
         else {
             login.setBackgroundResource(R.drawable.login_not);
         }
+        if(buttonString.equals("DEL") && editString.length() > 0) {
+            text = text.substring(0, editString.length() - 1);
+            editText.setText(text);
+            if (text.length() < 4) {
+                login.setBackgroundResource(R.drawable.login_not);
+            }
+        }
     }
+
 }
